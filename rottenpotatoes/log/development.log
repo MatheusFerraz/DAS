@@ -1,0 +1,288 @@
+Connecting to database specified by database.yml
+  [1m[36m (3.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (23.2ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120130161449')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (23.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (13.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (12.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120130161449')[0m
+  [1m[35m (12.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+Migrating to AddColumnDirectorToMovies (20151011134528)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "movies" ADD "director" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151011134528')[0m
+  [1m[35m (16.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (28.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (11.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151011134528')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-10-11 14:09:27 -0300
+Connecting to database specified by database.yml
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (14.4ms)
+Compiled application.css  (0ms)  (pid 24485)
+Compiled jquery.js  (5ms)  (pid 24485)
+Compiled jquery_ujs.js  (0ms)  (pid 24485)
+Compiled application.js  (66ms)  (pid 24485)
+Completed 200 OK in 277.5ms (Views: 196.1ms | ActiveRecord: 27.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-11 14:09:28 -0300
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:28 -0300
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:28 -0300
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:28 -0300
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2015-10-11 14:09:38 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered movies/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 7.6ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/1/same_director" for 127.0.0.1 at 2015-10-11 14:09:44 -0300
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Redirected to http://0.0.0.0:3000/movies/1
+Completed 302 Found in 1.5ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2015-10-11 14:09:44 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered movies/show.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 13.6ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:44 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-10-11 14:09:53 -0300
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (6.8ms)
+Completed 200 OK in 18.6ms (Views: 16.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:53 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 127.0.0.1 at 2015-10-11 14:09:55 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+Redirected to http://0.0.0.0:3000/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 0.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 127.0.0.1 at 2015-10-11 14:09:55 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+Redirected to http://0.0.0.0:3000/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title
+Completed 302 Found in 0.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=title" for 127.0.0.1 at 2015-10-11 14:09:55 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"title"}
+  [1m[35mMovie Load (4.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY title
+  Rendered movies/index.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 26.8ms (Views: 20.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:55 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 127.0.0.1 at 2015-10-11 14:09:59 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+Redirected to http://0.0.0.0:3000/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date
+Completed 302 Found in 0.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 127.0.0.1 at 2015-10-11 14:09:59 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (16.7ms)
+Completed 200 OK in 21.3ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:09:59 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2015-10-11 14:10:13 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4.7ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:14 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/7/same_director" for 127.0.0.1 at 2015-10-11 14:10:17 -0300
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "7"]]
+Redirected to http://0.0.0.0:3000/movies/7
+Completed 302 Found in 1.2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2015-10-11 14:10:17 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 4.5ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:17 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/movies/7/edit" for 127.0.0.1 at 2015-10-11 14:10:25 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered movies/edit.html.haml within layouts/application (20.3ms)
+Completed 200 OK in 24.1ms (Views: 23.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:25 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/movies/7" for 127.0.0.1 at 2015-10-11 14:10:35 -0300
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pj6hH3NXvbe0Q8v2/KRJS4gDvVp3gmrfIE/Zu8rsjGY=", "movie"=>{"title"=>"2001: A Space Odyssey", "rating"=>"G", "release_date(1i)"=>"1968", "release_date(2i)"=>"4", "release_date(3i)"=>"6", "director"=>"Riddley Scot"}, "commit"=>"Update Movie Info", "id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.4ms)[0m  UPDATE "movies" SET "director" = 'Riddley Scot', "updated_at" = '2015-10-11 17:10:35.696283' WHERE "movies"."id" = 7
+  [1m[36m (30.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/movies/7
+Completed 302 Found in 81.4ms (ActiveRecord: 33.9ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2015-10-11 14:10:35 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 9.8ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:35 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-10-11 14:10:38 -0300
+Processing by MoviesController#index as HTML
+Redirected to http://0.0.0.0:3000/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date
+Completed 302 Found in 0.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 127.0.0.1 at 2015-10-11 14:10:38 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 20.0ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2015-10-11 14:10:46 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 10.6ms (Views: 9.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:46 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies/7/same_director" for 127.0.0.1 at 2015-10-11 14:10:52 -0300
+Processing by MoviesController#same_director as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = 'Riddley Scot'
+  Rendered movies/same_director.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 22.6ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:10:52 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-10-11 14:11:13 -0300
+Processing by MoviesController#index as HTML
+Redirected to http://0.0.0.0:3000/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date
+Completed 302 Found in 0.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=G&ratings%5BNC-17%5D=NC-17&ratings%5BPG%5D=PG&ratings%5BPG-13%5D=PG-13&ratings%5BR%5D=R&sort=release_date" for 127.0.0.1 at 2015-10-11 14:11:13 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"G", "NC-17"=>"NC-17", "PG"=>"PG", "PG-13"=>"PG-13", "R"=>"R"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (23.8ms)
+Completed 200 OK in 32.6ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-11 14:11:13 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
