@@ -14,16 +14,19 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/movies'
+      movies_path
 
     when /^the edit page for "(.*)"$/
-      edit_movie_path(Movie.find_by_title($1))
+      edit_movie_path(Movie.find_by_title($1).id)
 
     when /^the details page for "(.*)"$/
-      movie_path(Movie.find_by_title($1))
+      movie_path(Movie.find_by_title($1).id)
 
     when /^the Similar Movies page for "(.*)"$/
       same_director_movie_path(Movie.find_by.title($1))
+
+    when /^the RottenPotatoes home page$/
+      movies_path
 
     else
       begin
